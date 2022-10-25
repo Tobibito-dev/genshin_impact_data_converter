@@ -1,23 +1,23 @@
 import os
 
 
-# check if genshin_data exists
+# check if GenshinData exists
 def check_data():
-    if os.path.isdir('./genshin_data/.git/'):
+    if os.path.isdir('./GenshinData/.git/'):
         print("updating genshin genshin_data_manager")
         update_data()
     else:
-        print("genshin_data missing")
+        print("GenshinData missing")
         get_data()
 
 
-# clone dimbreath genshin_data repo
+# clone dimbreath GenshinData repo
 def get_data():
-    os.system('git clone --progress https://github.com/Dimbreath/GenshinData.git ../genshin_data/ --depth 1')
+    os.system('git clone --progress https://github.com/Dimbreath/GenshinData.git ../GenshinData/ --depth 1')
 
 
-# pull dimbreath genshin_data repo
+# pull dimbreath GenshinData repo
 def update_data():
-    os.system('cd ./genshin_data/ && git fetch --progress --depth 1 && git reset --hard origin/master')
+    os.system('cd ./GenshinData/ && git fetch --progress --depth 1 && git reset --hard origin/master')
 
 check_data()

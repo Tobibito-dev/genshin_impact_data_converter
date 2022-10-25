@@ -1,1 +1,3 @@
-import data_map
+from data_map import index
+
+ids = index.ids
