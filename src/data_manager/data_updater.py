@@ -13,7 +13,7 @@ def check_data():
 
 # clone dimbreath genshin_data repo
 def get_data():
-    os.system('git clone --progress https://github.com/Dimbreath/GenshinData.git genshin_data --depth 1')
+    os.system('git clone --progress https://github.com/Dimbreath/GenshinData.git ../genshin_data/ --depth 1')
 
 
 # pull dimbreath genshin_data repo
