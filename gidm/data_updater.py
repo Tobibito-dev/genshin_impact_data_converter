@@ -19,3 +19,5 @@ def get_data():
 # pull dimbreath genshin_data repo
 def update_data():
     os.system('cd ./genshin_data/ && git fetch --progress --depth 1 && git reset --hard origin/master')
+
+check_data()
