@@ -1,7 +1,7 @@
 import json
 
 
-class CookRecipeExcelConfigData:  # ex. adeptus temptation
+class FoodRecipe:  # ex. adeptus temptation
     def __init__(self,
                  id: int,
                  name_text_map_hash: int,
@@ -11,11 +11,13 @@ class CookRecipeExcelConfigData:  # ex. adeptus temptation
                  effect_desc: list,
                  food_type: str,
                  cook_method: str,
+                 is_default_unlocked: bool,
                  max_proficiency: int,
                  quality_output_vec: list[dict],
                  input_vec: list[dict],
                  qte_param: str,
-                 qte_quality_weight_vec: list[int]):
+                 qte_quality_weight_vec: list[int]
+                 ):
         self.id = id  # 5101
         self.name_text_map_hash = name_text_map_hash  # 2535717720
         self.rank_level = rank_level  # 5
@@ -24,6 +26,7 @@ class CookRecipeExcelConfigData:  # ex. adeptus temptation
         self.effect_desc = effect_desc  # [1022833117, 3090219849, 3779451422, 4255144839]
         self.food_type = food_type
         self.cook_method = cook_method
+        self.is_default_unlocked = is_default_unlocked
         self.max_proficiency = max_proficiency  # 25
         self.quality_output_vec = quality_output_vec
         self.input_vec = input_vec
@@ -31,25 +34,36 @@ class CookRecipeExcelConfigData:  # ex. adeptus temptation
         self.qte_quality_weight_vec = qte_quality_weight_vec
 
 
-def return_recipe_excel_config_data(origin_file_path):
+def return_food_recipe_data(origin_file_path):
     temp_json_string = open(origin_file_path).read()
     temp_recipes = json.loads(temp_json_string)
-    cook_recipe_excel_config_data = []
+    food_recipe_data = []
     for item in temp_recipes:
-        food = CookRecipeExcelConfigData(
-            item['id'],
-            item['nameTextMapHash'],
-            item['rankLevel'],
-            item['icon'],
-            item['descTextMapHash'],
-            item['effectDesc'],
-            item['foodType'],
-            item['cookMethod'],
-            item['maxProficiency'],
-            item['qualityOutputVec'],
-            item['inputVec'],
-            item['qteParam'],
-            item['qteQualityWeightVec'],
+        food = FoodRecipe(
+            check_food_key(item, 'id'),
+            check_food_key(item, 'nameTextMapHash'),
+            check_food_key(item, 'rankLevel'),
+            check_food_key(item, 'icon'),
+            check_food_key(item, 'descTextMapHash'),
+            check_food_key(item, 'effectDesc'),
+            check_food_key(item, 'foodType'),
+            check_food_key(item, 'cookMethod'),
+            check_food_key(item, 'isDefaultUnlocked'),
+            check_food_key(item, 'maxProficiency'),
+            check_food_key(item, 'qualityOutputVec'),
+            check_food_key(item, 'inputVec'),
+            check_food_key(item, 'qteParam'),
+            check_food_key(item, 'qteQualityWeightVec'),
         )
-        cook_recipe_excel_config_data.append(food)
-    return cook_recipe_excel_config_data
+        food_recipe_data.append(food)
+    return food_recipe_data
+
+
+def check_food_key(item, key: str):
+    if key in item:
+        value = item[key]
+    elif key == 'isDefaultUnlocked':
+        value = False
+    else:
+        value = None
+    return value

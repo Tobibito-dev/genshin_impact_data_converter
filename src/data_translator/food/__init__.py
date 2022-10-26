@@ -1,1 +1,1 @@
-from . import cook_recipe_excel_config_data
+from . import recipe_data
