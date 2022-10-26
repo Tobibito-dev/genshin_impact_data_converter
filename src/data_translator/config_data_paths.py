@@ -4,6 +4,13 @@ artifact_set_path = 'ExcelBinOutput/ReliquarySetExcelConfigData.json'
 artifact_mainstat_path = 'ExcelBinOutput/ReliquaryLevelExcelConfigData.json'
 artifact_substat_path = 'ExcelBinOutput/ReliquaryAffixExcelConfigData.json'
 
+# character paths
+
+# common paths
 
 # food paths
 food_recipe_path = 'ExcelBinOutput/CookRecipeExcelConfigData.json'
+
+# material paths
+
+# weapon paths

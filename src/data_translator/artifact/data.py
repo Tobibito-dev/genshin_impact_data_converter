@@ -51,6 +51,7 @@ def return_artifact_data(origin_file_path):
     temp_json_string = open(origin_file_path).read()
     temp_artifacts = json.loads(temp_json_string)
     artifact_data = []
+    # create class object
     for item in temp_artifacts:
         artifact = ArtifactData(
             check_artifact_key(item, 'equipType'),

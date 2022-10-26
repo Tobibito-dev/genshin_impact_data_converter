@@ -1,18 +1,29 @@
 from . import config_data_paths
+from . import text_map_util
 
-from . import food
+#from . import data_map
 from . import artifact
+# from . import character
+# from . import common
+from . import food
+# from . import material
+# from . import weapon
+
 
 
 def translate_data(genshin_data_path):
     # artifact data
-    fetch_artifact_data(genshin_data_path)
-    fetch_artifact_set_data(genshin_data_path)
-    fetch_artifact_mainstat_data(genshin_data_path)
-    fetch_artifact_substat_data(genshin_data_path)
+    artifact_data = fetch_artifact_data(genshin_data_path)
+    artifact_set_data = fetch_artifact_set_data(genshin_data_path)
+    artifact_mainstat_data = fetch_artifact_mainstat_data(genshin_data_path)
+    artifact_substat_data = fetch_artifact_substat_data(genshin_data_path)
+
+    test_name = str(artifact_data[0].name_text_hash_map)
+    print(test_name)
+    print(text_map_util.get_value_from_language(genshin_data_path, 'en', test_name))
 
     # food data
-    fetch_food_recipe_data(genshin_data_path)
+    food_recipe_data = fetch_food_recipe_data(genshin_data_path)
 
 
 def fetch_artifact_data(genshin_data_path):
