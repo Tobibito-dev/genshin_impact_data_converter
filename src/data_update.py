@@ -16,5 +16,3 @@ def pull_data():
 
 def convert_data():
     pass
-
-update_data()
