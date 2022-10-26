@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gidm',
-    version='1.0.0',
+    version='3.1.1',
     license='MIT',
     author='Tobibito-dev',
     author_email='tobibito.dev@gmail.com',

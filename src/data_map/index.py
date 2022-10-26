@@ -3,7 +3,7 @@ from characters import char
 # get skill ids
 from dmg_sheet import sheet
 
-ids = {
+map_hash_data = {
     # add char and sheet
     "char": char,
     "sheet": sheet,
