@@ -1,3 +1,5 @@
+import json
+
 from . import config_data_paths
 from . import text_map_util
 
@@ -12,15 +14,16 @@ from . import food
 
 
 def translate_data(genshin_data_path):
+    # load languages
+    languages = text_map_util.get_languages(genshin_data_path)
+
     # artifact data
     artifact_data = fetch_artifact_data(genshin_data_path)
     artifact_set_data = fetch_artifact_set_data(genshin_data_path)
     artifact_mainstat_data = fetch_artifact_mainstat_data(genshin_data_path)
     artifact_substat_data = fetch_artifact_substat_data(genshin_data_path)
 
-    test_name = str(artifact_data[0].name_text_hash_map)
-    print(test_name)
-    print(text_map_util.get_value_from_language(genshin_data_path, 'en', test_name))
+
 
     # food data
     food_recipe_data = fetch_food_recipe_data(genshin_data_path)

@@ -3,30 +3,34 @@ import json
 
 # TODO: assign file objects for json
 
-def get_value_from_language(genshin_data_path, language_key: str, key_id: str):
-    languages = get_languages(genshin_data_path)
-    language = languages[language_key]
-    language_json = json.loads(language.read())
-    value = language_json[key_id]
+def get_value_from_language(language, key_id: str):
+    if key_id in language:
+        value = language[key_id]
+    else:
+        value = None
     return value
 
 
 
 
 def get_languages(genshin_data_path):
-    text_map_chs = open(genshin_data_path + 'TextMap/TextMapCHS.json', encoding='utf8')
-    text_map_cht = open(genshin_data_path + 'TextMap/TextMapCHT.json', encoding='utf8')
-    text_map_de = open(genshin_data_path + 'TextMap/TextMapDE.json', encoding='utf8')
-    text_map_en = open(genshin_data_path + 'TextMap/TextMapEN.json', encoding='utf8')
-    text_map_es = open(genshin_data_path + 'TextMap/TextMapES.json', encoding='utf8')
-    text_map_fr = open(genshin_data_path + 'TextMap/TextMapFR.json', encoding='utf8')
-    text_map_id = open(genshin_data_path + 'TextMap/TextMapID.json', encoding='utf8')
-    text_map_jp = open(genshin_data_path + 'TextMap/TextMapJP.json', encoding='utf8')
-    text_map_kr = open(genshin_data_path + 'TextMap/TextMapKR.json', encoding='utf8')
-    text_map_pt = open(genshin_data_path + 'TextMap/TextMapPT.json', encoding='utf8')
-    text_map_ru = open(genshin_data_path + 'TextMap/TextMapRU.json', encoding='utf8')
-    text_map_th = open(genshin_data_path + 'TextMap/TextMapTH.json', encoding='utf8')
-    text_map_vi = open(genshin_data_path + 'TextMap/TextMapVI.json', encoding='utf8')
+    # create json object of each language
+    # will be closed later
+    # fasted method unfortunately
+    # high flexibility
+    text_map_chs = json.loads(open(genshin_data_path + 'TextMap/TextMapCHS.json', encoding='utf8').read())
+    text_map_cht = json.loads(open(genshin_data_path + 'TextMap/TextMapCHT.json', encoding='utf8').read())
+    text_map_de = json.loads(open(genshin_data_path + 'TextMap/TextMapDE.json', encoding='utf8').read())
+    text_map_en = json.loads(open(genshin_data_path + 'TextMap/TextMapEN.json', encoding='utf8').read())
+    text_map_es = json.loads(open(genshin_data_path + 'TextMap/TextMapES.json', encoding='utf8').read())
+    text_map_fr = json.loads(open(genshin_data_path + 'TextMap/TextMapFR.json', encoding='utf8').read())
+    text_map_id = json.loads(open(genshin_data_path + 'TextMap/TextMapID.json', encoding='utf8').read())
+    text_map_jp = json.loads(open(genshin_data_path + 'TextMap/TextMapJP.json', encoding='utf8').read())
+    text_map_kr = json.loads(open(genshin_data_path + 'TextMap/TextMapKR.json', encoding='utf8').read())
+    text_map_pt = json.loads(open(genshin_data_path + 'TextMap/TextMapPT.json', encoding='utf8').read())
+    text_map_ru = json.loads(open(genshin_data_path + 'TextMap/TextMapRU.json', encoding='utf8').read())
+    text_map_th = json.loads(open(genshin_data_path + 'TextMap/TextMapTH.json', encoding='utf8').read())
+    text_map_vi = json.loads(open(genshin_data_path + 'TextMap/TextMapVI.json', encoding='utf8').read())
 
     language_map = {
         "chs": text_map_chs,
