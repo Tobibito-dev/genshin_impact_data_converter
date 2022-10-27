@@ -1,16 +1,17 @@
-import json
+# import json
 
 from . import config_data_paths
 from . import text_map_util
 
-#from . import data_map
+# from . import data_map
 from . import artifact
 # from . import character
 # from . import common
 from . import food
+
+
 # from . import material
 # from . import weapon
-
 
 
 def translate_data(genshin_data_path):
@@ -23,10 +24,16 @@ def translate_data(genshin_data_path):
     artifact_mainstat_data = fetch_artifact_mainstat_data(genshin_data_path)
     artifact_substat_data = fetch_artifact_substat_data(genshin_data_path)
 
+    # character data
 
+    # common data
 
     # food data
     food_recipe_data = fetch_food_recipe_data(genshin_data_path)
+
+    # material data
+
+    # weapon data
 
 
 def fetch_artifact_data(genshin_data_path):
