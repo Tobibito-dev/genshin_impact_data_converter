@@ -7,11 +7,12 @@ artifact_substat_path = 'ExcelBinOutput/ReliquaryAffixExcelConfigData.json'
 # character paths
 
 # common paths
-common_path = 'ExcelBinOutput/EquipAffixExcelConfigData'
+common_path = 'ExcelBinOutput/EquipAffixExcelConfigData.json'
 
 # food paths
-food_recipe_path = 'ExcelBinOutput/CookRecipeExcelConfigData.json'
+food_path = 'ExcelBinOutput/CookRecipeExcelConfigData.json'
 
 # material paths
+material_path = 'ExcelBinOutput/MaterialExcelConfigData.json'
 
 # weapon paths

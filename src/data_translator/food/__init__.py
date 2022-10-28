@@ -1,1 +1,1 @@
-from . import recipe_data
+from . import data

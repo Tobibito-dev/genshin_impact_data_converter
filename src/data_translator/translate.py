@@ -8,9 +8,9 @@ from . import artifact
 # from . import character
 from . import common
 from . import food
+from . import material
 
 
-# from . import material
 # from . import weapon
 
 
@@ -24,19 +24,21 @@ def translate_data(genshin_data_path):
     artifact_mainstat_data = fetch_artifact_mainstat_data(genshin_data_path)
     artifact_substat_data = fetch_artifact_substat_data(genshin_data_path)
 
-    # print(text_map_util.get_value_from_language(languages['en'], str(artifact_data[3000].name_text_hash_map)))
-
     # character data
 
     # common data
     common_data = fetch_common_data(genshin_data_path)
 
     # food data
-    food_recipe_data = fetch_food_recipe_data(genshin_data_path)
+    food_data = fetch_food_data(genshin_data_path)
 
     # material data
+    material_data = fetch_material_data(genshin_data_path)
 
     # weapon data
+
+    # test data
+    # print(text_map_util.get_value_from_language(languages['en'], str(artifact_data[3000].name_text_hash_map)))
 
 
 # fetch artifact methods
@@ -72,7 +74,14 @@ def fetch_common_data(genshin_data_path):
 
 
 # fetch food methods
-def fetch_food_recipe_data(genshin_data_path):
-    food_recipe_path = genshin_data_path + config_data_paths.food_recipe_path
-    food_recipe_list = food.recipe_data.return_food_recipe_data(food_recipe_path)
-    return food_recipe_list
+def fetch_food_data(genshin_data_path):
+    food_data_path = genshin_data_path + config_data_paths.food_path
+    food_data_list = food.data.return_food_data(food_data_path)
+    return food_data_list
+
+
+# fetch material methods
+def fetch_material_data(genshin_data_path):
+    material_data_path = genshin_data_path + config_data_paths.material_path
+    material_data_list = material.data.return_material_data(material_data_path)
+    return material_data_list
