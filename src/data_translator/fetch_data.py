@@ -52,6 +52,7 @@ def character_promote_data(genshin_data_path):
 def character_fetter_data(genshin_data_path):  # ???
     pass
 
+
 # Todo: character methods
 
 # fetch common methods

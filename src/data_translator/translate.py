@@ -4,11 +4,6 @@ from . import fetch_data
 from . import text_map_util
 
 
-
-
-
-
-
 def translate_data(genshin_data_path):
     # load languages
     languages = text_map_util.get_languages(genshin_data_path)
@@ -34,5 +29,3 @@ def translate_data(genshin_data_path):
 
     # test data
     # print(text_map_util.get_value_from_language(languages['en'], str(artifact_data[3000].name_text_hash_map)))
-
-
