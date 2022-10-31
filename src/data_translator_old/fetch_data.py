@@ -6,9 +6,7 @@ from . import artifact
 from . import common
 from . import food
 from . import material
-
-
-# from . import weapon
+from . import weapon
 
 
 # fetch artifact methods
@@ -74,3 +72,22 @@ def material_data(genshin_data_path):
     material_data_path = genshin_data_path + config_data_paths.material_path
     material_data_list = material.data.return_material_data(material_data_path)
     return material_data_list
+
+
+# fetch weapon methods
+def weapon_data(genshin_data_path):
+    weapon_data_path = genshin_data_path + config_data_paths.weapon_path
+    weapon_data_list = weapon.data.return_weapon_data(weapon_data_path)
+    return weapon_data_list
+
+
+def weapon_curve_data(genshin_data_path):
+    weapon_curve_path = genshin_data_path + config_data_paths.weapon_curve_path
+    weapon_curve_list = weapon.curve_data.return_weapon_curve_data(weapon_curve_path)
+    return weapon_curve_list
+
+
+def weapon_promote_data(genshin_data_path):
+    weapon_promote_path = genshin_data_path + config_data_paths.weapon_promote_path
+    weapon_promote_list = weapon.promote_data.return_weapon_promote_data(weapon_promote_path)
+    return weapon_promote_list
