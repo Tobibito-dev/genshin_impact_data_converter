@@ -9,7 +9,7 @@ def get_value_from_language(language, key_id: str):
     return value
 
 
-def get_languages(genshin_data_path):
+def get_languages(genshin_data_path: str):
     # create json object of each language
     # will be closed later
     # fasted method unfortunately

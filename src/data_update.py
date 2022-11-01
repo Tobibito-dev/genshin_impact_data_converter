@@ -17,4 +17,5 @@ def pull_data():
 def convert_data():
     data_translator.translate.translate_data(data_paths.genshin_data_path)
 
+
 convert_data()
