@@ -1,6 +1,6 @@
 import data_paths
 
-import data_translator_old
+import data_translator
 import data_updater
 
 
@@ -15,6 +15,6 @@ def pull_data():
 
 
 def convert_data():
-    data_translator_old.translate.translate_data(data_paths.genshin_data_path)
+    data_translator.translate.translate_data(data_paths.genshin_data_path)
 
-
+convert_data()
