@@ -11,7 +11,8 @@ def update_data():
 
 
 def pull_data():
-    data_updater.pull.check_data(data_paths.genshin_data_path)
+    # data_updater.pull.check_data(data_paths.genshin_data_path)
+    pass
 
 
 def convert_data():
