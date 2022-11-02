@@ -1,1 +1,1 @@
-from . import data_update, data_get, data_dump
+from . import update_data, get, dump

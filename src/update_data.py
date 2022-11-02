@@ -1,4 +1,4 @@
-import data_paths
+import config
 
 import data_translator
 # import data_updater
@@ -11,12 +11,12 @@ def update_data():
 
 
 def pull_data():
-    # data_updater.pull.check_data(data_paths.genshin_data_path)
+    # data_updater.pull.check_data(config.genshin_data_path)
     pass
 
 
 def convert_data():
-    data_translator.translate.translate_data(data_paths.genshin_data_path)
+    data_translator.translate.translate_data(config.genshin_data_path)
 
 
 convert_data()
