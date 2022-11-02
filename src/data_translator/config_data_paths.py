@@ -28,9 +28,3 @@ food_path = 'ExcelBinOutput/CookRecipeExcelConfigData.json'
 
 # material paths
 material_path = 'ExcelBinOutput/MaterialExcelConfigData.json'
-
-# weapon paths
-weapon_path = 'ExcelBinOutput/WeaponExcelConfigData.json'
-weapon_curve_path = 'ExcelBinOutput/WeaponCurveExcelConfigData.json'
-weapon_promote_path = 'ExcelBinOutput/WeaponPromoteExcelConfigData.json'
-weapon_exp_data = 'ExcelBinOutput/WeaponPLevelExcelConfigData.json'
