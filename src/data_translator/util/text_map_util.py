@@ -1,7 +1,7 @@
 import json
 
 
-def get_value_from_languages(languages: dict, key_id: str):
+def get_values_from_languages(languages: dict, key_id: str):
     values = {}
     for language_key in languages['keys']:
         if key_id in languages['values'][language_key]:
