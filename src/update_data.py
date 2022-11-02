@@ -16,7 +16,7 @@ def pull_data():
 
 
 def convert_data():
-    data_translator.translate.translate_data(config.genshin_data_path)
+    data_translator.translate.translate_data(config.genshin_data_path, config.language_keys)
 
 
 convert_data()

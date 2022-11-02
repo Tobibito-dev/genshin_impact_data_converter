@@ -13,12 +13,14 @@ def get_value_from_languages(languages: dict, key_id: str):
 
 
 def get_languages(genshin_data_path: str, language_keys: list[str]):
-    language_map = {}
+    language_values = {}
     for key in language_keys:
         path = genshin_data_path + 'TextMap/TextMap' + key.upper() + '.json'  # 'TextMap/TextMapEN.json'
         text_map = json.loads(open(path, encoding='utf8').read())
-        language_map[key] = text_map
+        language_values[key] = text_map
 
+    language_map = {'keys': language_keys,
+                    'values': language_values}
     return language_map
 
 
