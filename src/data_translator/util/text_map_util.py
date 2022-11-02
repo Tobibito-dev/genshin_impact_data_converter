@@ -1,7 +1,7 @@
 import json
 
 
-def get_values_from_languages(languages: dict, key_id: str):
+def get_values_from_languages(languages: dict, key_id: str) -> dict:
     values = {}
     for language_key in languages['keys']:
         if key_id in languages['values'][language_key]:
@@ -12,11 +12,11 @@ def get_values_from_languages(languages: dict, key_id: str):
     return values
 
 
-def get_languages(genshin_data_path: str, language_keys: list[str]):
+def get_languages(genshin_data_path: str, language_keys: list[str]) -> dict:
     language_values = {}
     for key in language_keys:
-        path = genshin_data_path + 'TextMap/TextMap' + key.upper() + '.json'  # 'TextMap/TextMapEN.json'
-        text_map = json.loads(open(path, encoding='utf8').read())
+        text_map_path = genshin_data_path + 'TextMap/TextMap' + key.upper() + '.json'  # 'TextMap/TextMapEN.json'
+        text_map = json.loads(open(text_map_path, encoding='utf8').read())
         language_values[key] = text_map
 
     language_map = {'keys': language_keys,
