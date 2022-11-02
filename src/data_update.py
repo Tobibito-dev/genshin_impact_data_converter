@@ -1,7 +1,7 @@
 import data_paths
 
 import data_translator
-import data_updater
+# import data_updater
 
 
 # pull data then convert

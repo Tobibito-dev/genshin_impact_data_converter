@@ -1,8 +1,7 @@
 import json
 
-from . import config_data_paths
-from . import float_calculator
-from . import text_map_util
+from .. import config_data_paths
+from .. import util
 
 
 def get_weapons(genshin_data_path: str, language):
@@ -16,7 +15,7 @@ def get_weapons(genshin_data_path: str, language):
     unknown = 0
     for weapon in weapon_data:
         # get weapon name in correct language
-        name = text_map_util.get_value_from_language(language, str(weapon['nameTextMapHash']))
+        name = util.text_map_util.get_value_from_language(language, str(weapon['nameTextMapHash']))
         # replace spaces in name with underscore and remove apostrophe
         key = str(name).lower().replace(' ', '_').replace("'", '')
         # check for key == none and replace
@@ -42,7 +41,7 @@ def get_weapon_stats(weapon: dict, weapon_curve_data: list):
     main_stat_init = weapon['weaponProp'][0]
     sub_stat_init = weapon['weaponProp'][1]
     main_curve_type = main_stat_init['type']
-    sub_stat_type = sub_stat_init['type']
+    sub_curve_type = sub_stat_init['type']
 
     # initialize weapon stats, add stat types and add base stats add default value if not found
     weapon_stats = {
@@ -54,8 +53,8 @@ def get_weapon_stats(weapon: dict, weapon_curve_data: list):
     }
 
     for level_data in weapon_curve_data:
-        main_curve_value = level_data['curveInfos']['GROW_CURVE_ATTACK_203']['value']
-        sub_curve_value = level_data['curveInfos']['GROW_CURVE_ATTACK_202']['value']
+        main_curve_value = level_data['curveInfos'][main_curve_type]['value']
+        sub_curve_value = level_data['curveInfos'][sub_curve_type]['value']
 
         # insert data for one level into weapon stats['levels']
         weapon_stats['levels'][level_data['level']] = {

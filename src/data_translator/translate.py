@@ -1,5 +1,5 @@
-from . import text_map_util
-from . import weapon_translator
+from .util import text_map_util
+from . import food, weapon
 
 
 def translate_data(genshin_data_path: str):
@@ -7,4 +7,5 @@ def translate_data(genshin_data_path: str):
     languages = text_map_util.get_languages(genshin_data_path)
 
     print('Starting translation')
-    weapons = weapon_translator.get_weapons(genshin_data_path, languages['en'])
+    foods = food.data.get(genshin_data_path, languages['en'])
+    weapons = weapon.data.get_weapons(genshin_data_path, languages['en'])
