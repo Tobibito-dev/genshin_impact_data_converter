@@ -1,12 +1,15 @@
 import json
 
 
-def get_value_from_language(language, key_id: str):
-    if key_id in language:
-        value = language[key_id]
-    else:
-        value = None
-    return value
+def get_value_from_languages(languages: dict, key_id: str):
+    values = {}
+    for language_key in languages['keys']:
+        if key_id in languages['values'][language_key]:
+            value = languages['values'][language_key][key_id]
+        else:
+            value = None
+        values[language_key] = value
+    return values
 
 
 def get_languages(genshin_data_path: str, language_keys: list[str]):
