@@ -11,6 +11,7 @@ def convert_data(genshin_data_path, template, languages):
 
     for item in source_data['main']:
         converted_object = {}
+        unknown
 
         for template_key in template_data:
             source_file = source_data[template_data[template_key]['path']]
@@ -25,7 +26,13 @@ def convert_data(genshin_data_path, template, languages):
                 attribute = None
             converted_object[template_key] = attribute
 
-    converted_data['key'] = converted_object
+        name = converted_object['name']['en']
+        key = name.lower().replace(' ', '_').replace('-', '_').replace("'", '')
+        if key == 'none':
+            key = 'unknown' + str(unknown)
+            unknown = unknown + 1
+        converted_data[key] = converted_object
+    converted_data['unknownCount'] = unknown
     return converted_data
 
 
