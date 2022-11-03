@@ -5,6 +5,7 @@ weapon_promote_path = 'ExcelBinOutput/WeaponPromoteExcelConfigData.json'
 weapon_exp_data = 'ExcelBinOutput/WeaponPLevelExcelConfigData.json'
 
 template = {
+    'type': 'weapon',
     'paths': {'main': weapon_path,
               'sub0': weapon_curve_path,
               'sub1': weapon_promote_path,
@@ -13,9 +14,10 @@ template = {
              'id': {'path': 'main', 'key': 'id', 'conversionMethod': 'direct'},
              'weaponType': {'path': 'main', 'key': 'weaponType', 'conversionMethod': 'direct'},
              'rankLevel': {'path': 'main', 'key': 'rankLevel', 'conversionMethod': 'direct'},
-             # 'weaponText': '',
+             'weaponDesc': {'path': 'main', 'key': 'descTextMapHash', 'conversionMethod': 'textMap'},
              # 'weaponStats': {},
              # 'weaponPromote': {},
+             # 'weaponFlavor': {}
              # TODO: weapon template
              }
 }
