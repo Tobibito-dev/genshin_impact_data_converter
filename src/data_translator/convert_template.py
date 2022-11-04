@@ -33,11 +33,14 @@ def convert_template_data(genshin_data_path, languages, template):
 
 
 def convert_one_template_value(genshin_data_path, languages, source_data, src_item, item_type, template_value):
-    source_file = template_value['path']
+    source_path = template_value['path']
+    source_file = source_data[source_path]
     source_key = template_value['key']
     conversion_method = template_value['conversionMethod']
 
-    if conversion_method == 'direct':
+    if conversion_method == 'curve':
+        attribute = conversion_methods.curve.convert(src_item, source_file, source_key)
+    elif conversion_method == 'direct':
         attribute = conversion_methods.direct.convert(src_item, source_key)
     elif conversion_method == 'readable':
         attribute = conversion_methods.readable.convert(genshin_data_path, languages, item_type, src_item, source_key)
