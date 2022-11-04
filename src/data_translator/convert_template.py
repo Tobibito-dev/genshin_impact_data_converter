@@ -12,7 +12,6 @@ def convert_template_data(genshin_data_path, languages, template):
 
     for src_item in source_data['main']:
         converted_object = {}
-        unknown = 0
 
         for template_key in template_data:
             template_value = template_data[template_key]
