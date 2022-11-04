@@ -19,8 +19,3 @@ def get_languages(genshin_data_path: str, language_keys: list[str]) -> dict:
 
     return language_map
 
-
-def name_to_key(name: str):
-    key = name.lower().replace(' ', '').replace("'", '')
-    return key
-
