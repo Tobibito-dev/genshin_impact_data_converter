@@ -9,5 +9,5 @@ def translate_data(genshin_data_path, language_keys: list[str]):
 
     # print(util.text_map_util.get_values_from_languages(languages, str(160493219)))
 
-    weapon = convert_template.convert_data(genshin_data_path, languages, templates.weapon.template)
+    weapon = convert_template.convert_template_data(genshin_data_path, languages, templates.weapon.template)
     print(weapon['primordial_jade_winged_spear'])

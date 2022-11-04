@@ -3,7 +3,7 @@ import json
 from . import conversion_methods
 
 
-def convert_data(genshin_data_path, languages, template):
+def convert_template_data(genshin_data_path, languages, template):
     source_data = get_source_data(genshin_data_path, template)
     item_type = template['type']
     template_data = template['data']
@@ -17,7 +17,7 @@ def convert_data(genshin_data_path, languages, template):
         for template_key in template_data:
             template_value = template_data[template_key]
 
-            attribute = convert_with_method(
+            attribute = convert_one_template_value(
                 genshin_data_path, languages, source_data, src_item, item_type, template_value)
             converted_object[template_key] = attribute
 
@@ -33,7 +33,7 @@ def convert_data(genshin_data_path, languages, template):
     return converted_data
 
 
-def convert_with_method(genshin_data_path, languages, source_data, src_item, item_type, template_value):
+def convert_one_template_value(genshin_data_path, languages, source_data, src_item, item_type, template_value):
     source_file = template_value['path']
     source_key = template_value['key']
     conversion_method = template_value['conversionMethod']
