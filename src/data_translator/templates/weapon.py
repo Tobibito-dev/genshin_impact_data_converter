@@ -14,10 +14,10 @@ template = {
              'id': {'path': 'main', 'key': 'id', 'conversionMethod': 'direct'},
              'weaponType': {'path': 'main', 'key': 'weaponType', 'conversionMethod': 'direct'},
              'rankLevel': {'path': 'main', 'key': 'rankLevel', 'conversionMethod': 'direct'},
-             'weaponDesc': {'path': 'main', 'key': 'descTextMapHash', 'conversionMethod': 'textMap'},
              # 'weaponStats': {},
              # 'weaponPromote': {},
-             'weaponFlavor': {'path': 'main', 'key': 'id', 'conversionMethod': 'readable'}
              # TODO: weapon template
+             'weaponDesc': {'path': 'main', 'key': 'descTextMapHash', 'conversionMethod': 'textMap'},
+             'weaponFlavor': {'path': 'main', 'key': 'id', 'conversionMethod': 'readable'}
              }
 }
