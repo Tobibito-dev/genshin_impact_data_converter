@@ -17,7 +17,7 @@ template = {
              'weaponDesc': {'path': 'main', 'key': 'descTextMapHash', 'conversionMethod': 'textMap'},
              # 'weaponStats': {},
              # 'weaponPromote': {},
-             # 'weaponFlavor': {}
+             'weaponFlavor': {'path': 'main', 'key': 'id', 'conversionMethod': 'readable'}
              # TODO: weapon template
              }
 }

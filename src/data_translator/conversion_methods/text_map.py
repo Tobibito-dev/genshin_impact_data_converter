@@ -1,10 +1,8 @@
-from .. import util
+from ..util import text_map_util
 
 
-def convert(current_source_data, source_key, languages):
+def convert(languages, current_source_item, source_key):
     values = {}
-
-    for language_key in languages:
-        text_map_hash = str(current_source_data[source_key])
-        values = util.text_map_util.get_values_from_languages(languages, text_map_hash)
+    text_map_hash = str(current_source_item[source_key])
+    values = text_map_util.get_values_from_languages(languages, text_map_hash)
     return values
