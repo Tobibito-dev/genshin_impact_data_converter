@@ -15,8 +15,8 @@ template = {
              'weaponType': {'path': 'main', 'key': 'weaponType', 'conversionMethod': 'direct'},
              'rankLevel': {'path': 'main', 'key': 'rankLevel', 'conversionMethod': 'direct'},
              'weaponStats': {'path': 'sub0', 'key': 'weaponProp', 'conversionMethod': 'curve'},
-             # 'weaponPromote': {},
-             # TODO: weapon template
+             # 'weaponPromote': {'path': 'sub1', 'key': 'weaponPromoteId', 'conversionMethod': 'weaponPromote'},
+             # Todo: weaponPromote and Weapon Affix
              'weaponDesc': {'path': 'main', 'key': 'descTextMapHash', 'conversionMethod': 'textMap'},
              'weaponFlavor': {'path': 'main', 'key': 'id', 'conversionMethod': 'readable'}
              }
