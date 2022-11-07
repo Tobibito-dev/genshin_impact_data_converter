@@ -22,7 +22,7 @@ def convert_template_data(genshin_data_path, languages, template):
 
         name = converted_object['name']['en']
         key = name_to_key(name)
-        if key == 'none':
+        if key == '':
             key = 'unknown' + str(unknown)
             unknown = unknown + 1
 
