@@ -44,6 +44,8 @@ def convert_one_template_value(genshin_data_path, languages, source_data, src_it
         attribute = conversion_methods.direct.convert(src_item, source_key)
     elif conversion_method == 'readable':
         attribute = conversion_methods.readable.convert(genshin_data_path, languages, item_type, src_item, source_key)
+    elif conversion_method == 'stat':
+        attribute = conversion_methods.stat.convert(src_item, source_file, source_key)
     elif conversion_method == 'textMap':
         attribute = conversion_methods.text_map.convert(languages, src_item, source_key)
     else:
