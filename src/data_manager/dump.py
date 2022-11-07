@@ -15,4 +15,4 @@ def dump_all(dump_data_path):
             item_data = data.data_obj[data_type][item]
 
             with open(item_dump_path, 'w') as item_file:
-                json.dump(item_data, item_file, indent=4, ensure_ascii=False)
+                json.dump(item_data, item_file, indent=4, ensure_ascii=True)

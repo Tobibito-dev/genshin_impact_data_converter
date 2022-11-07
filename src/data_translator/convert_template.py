@@ -64,5 +64,9 @@ def get_source_data(genshin_data_path, template):
 
 
 def name_to_key(name: str):
-    key = name.lower().replace(' ', '_').replace('-', '_').replace("'", '')
+    key = name.lower()
+    key = key.replace(' ', '_').replace('-', '_')
+    chars = ["'",  '"', '.', '?', '!', '#']
+    for char in chars:
+        key = key.replace(char, '')
     return key
