@@ -1,4 +1,5 @@
 import json
+import io
 
 from pathlib import Path
 
@@ -14,5 +15,5 @@ def dump_all(dump_data_path):
             item_dump_path = type_dump_path + item + '.json'
             item_data = data.data_obj[data_type][item]
 
-            with open(item_dump_path, 'w') as item_file:
-                json.dump(item_data, item_file, indent=4, ensure_ascii=True)
+            with open(item_dump_path, 'w', encoding='utf8') as item_file:
+                json.dump(item_data, item_file, indent=4, ensure_ascii=False)
