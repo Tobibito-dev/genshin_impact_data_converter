@@ -1,10 +1,12 @@
-import update_data
-import config
-import pprint
+from . import update_data
+from . import config
 
-from data_manager import data
-from data_manager import dump
+from .data_manager import dump
 
-update_data.convert_data()
 
-dump.dump_all(config.dump_data_path)
+def init():
+    update_data.convert_data()
+
+
+def dump_all():
+    dump.dump_all(config.dump_data_path)

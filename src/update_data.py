@@ -1,9 +1,9 @@
-import config
+from . import config
 
-from data_manager import data
+from .data_manager import data
 
-import data_translator
-# import data_updater
+from . import data_translator
+# from . import data_updater
 
 
 # pull data then convert

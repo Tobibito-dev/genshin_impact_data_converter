@@ -1,1 +1,1 @@
-from . import update_data, get, dump
+from .main import init, dump_all
