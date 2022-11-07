@@ -1,1 +1,2 @@
-from .main import init, dump_all
+from .main import init
+from .dump import dump_all
