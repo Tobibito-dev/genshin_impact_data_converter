@@ -1,3 +1,5 @@
+from .util import float_calculator
+
 data = {}
 
 
@@ -15,3 +17,23 @@ class DataObject:
         if type(object_data) != int:
             for key in object_data:
                 setattr(self, key, object_data[key])
+
+    def get_value(self, key: str):
+        value = getattr(self, key)
+        return value
+
+    def get_stats(self, level: int):
+        if not hasattr(self, 'curve'):
+            print('no curve existing')
+            stats = None
+        elif level < 1 or level > 100:
+            print('this level doesnt exist')
+            stats = None
+        else:
+            stats = []
+            for base_stat in getattr(self, 'baseStats'):
+                stats.append(base_stat)
+            for index, stat in enumerate(stats):
+                curve_stat = getattr(self, 'curve')[level][index]
+                stat['value'] = float_calculator.calculate(stat['value'], curve_stat['value'], curve_stat['arith'])
+        return stats

@@ -2,6 +2,8 @@ import src as gidm
 
 gidm.init()
 
-character = gidm.get_object('characters', 'albedo')
-for key in character.data:
-    print(getattr(character, key))
+object = gidm.get_object('weapons', 'primordial_jade_winged_spear')
+for key in object.data:
+    print(object.get_value(key))
+
+print(object.get_stats(90))
