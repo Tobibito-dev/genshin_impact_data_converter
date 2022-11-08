@@ -59,7 +59,8 @@ def get_source_data(genshin_data_path, template):
     for template_path in template['paths']:
         template_path_string = template['paths'][template_path]
         full_path_string = genshin_data_path + template_path_string
-        source_data[template_path] = json.loads(open(full_path_string, encoding='utf8').read())
+        with open(full_path_string, encoding='utf8') as path_file:
+            source_data[template_path] = json.loads(path_file.read())
     return source_data
 
 

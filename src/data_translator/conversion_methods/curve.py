@@ -1,6 +1,3 @@
-from ..util import float_calculator
-
-
 def convert(current_source_item, source_file, source_key):
     values = {}
     stat_types = []
