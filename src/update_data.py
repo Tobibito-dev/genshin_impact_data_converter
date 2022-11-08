@@ -1,6 +1,6 @@
 from . import config
 
-from .data_manager import data
+from .data_manager import storage
 
 from . import data_translator
 # from . import data_updater
@@ -18,4 +18,4 @@ def pull_data():
 
 
 def convert_data():
-    data.data_obj = data_translator.translate.translate_data(config.genshin_data_path, config.language_keys)
+    storage.replace_data(data_translator.translate.translate_data(config.genshin_data_path, config.language_keys))

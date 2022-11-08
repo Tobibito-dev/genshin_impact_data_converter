@@ -1,7 +1,7 @@
 from . import config
 
-from .data_manager import dump
+from . import data_manager
 
 
 def dump_all():
-    dump.dump_all(config.dump_data_path)
+    data_manager.dump.all_data(config.dump_data_path)
