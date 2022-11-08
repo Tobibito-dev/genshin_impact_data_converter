@@ -1,11 +1,12 @@
 from . import data_manager
+from .data_manager.storage import DataObject
 
 
 def get_all_data():
     return data_manager.get.all_data()
 
 
-def get_object(cat_key: str, char_key: str):
+def get_object(cat_key: str, char_key: str) -> DataObject:
     character = data_manager.get.data_object(cat_key, char_key)
     return character
 

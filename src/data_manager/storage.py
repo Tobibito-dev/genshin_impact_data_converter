@@ -12,6 +12,6 @@ def replace_data(new_data: dict):
 class DataObject:
     def __init__(self, object_data: dict):
         self.data = object_data
-
-    def get_data(self):
-        return self.data
+        if type(object_data) != int:
+            for key in object_data:
+                setattr(self, key, object_data[key])

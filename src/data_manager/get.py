@@ -1,4 +1,5 @@
 from . import storage
+from .storage import DataObject
 
 
 def all_data():
@@ -9,7 +10,7 @@ def category(cat_key: str):
     return storage.data.get(cat_key)
 
 
-def data_object(cat_key, obj_key: str):
+def data_object(cat_key, obj_key: str) -> DataObject:
     if cat_key in storage.data and obj_key in storage.data[cat_key]:
         obj_data = storage.data[cat_key][obj_key]
     else:
