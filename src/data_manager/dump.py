@@ -1,3 +1,4 @@
+import shutil
 import json
 
 from pathlib import Path
@@ -5,7 +6,10 @@ from pathlib import Path
 from . import storage
 
 
-def all_data(dump_data_path: str, one_file=False):
+def all_data(dump_data_path: str, one_file=False, reset_dir=True):
+    if reset_dir and Path(dump_data_path).exists():
+        shutil.rmtree(dump_data_path)
+
     if not one_file:
         for data_type in storage.data:
             type_dump_path = dump_data_path + data_type + '/'
