@@ -1,4 +1,3 @@
-
 def convert(current_source_item, source_key, source_key_list):
     base_stats = []
     stat_types = []
