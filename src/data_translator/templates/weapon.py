@@ -16,7 +16,7 @@ template = {
              'rankLevel': {'path': 'main', 'key': 'rankLevel', 'conversionMethod': 'direct'},
              'baseStats': {'path': 'main', 'key': 'weaponProp', 'conversionMethod': 'baseStat'},
              'curve': {'path': 'sub0', 'key': 'weaponProp', 'conversionMethod': 'curve'},
-             'weaponPromote': {'path': 'sub1', 'key': 'weaponPromoteId', 'conversionMethod': 'promote'},
+             'promote': {'path': 'sub1', 'key': 'weaponPromoteId', 'conversionMethod': 'promote'},
              # Todo: weaponPromote and Weapon Affix
              'desc': {'path': 'main', 'key': 'descTextMapHash', 'conversionMethod': 'textMap'},
              'flavor': {'path': 'main', 'key': 'id', 'conversionMethod': 'readable'}

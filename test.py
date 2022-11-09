@@ -8,4 +8,3 @@ for key in object.data:
 
 print('')
 print(object.get_stats(90))
-print(object.get_stats(80))

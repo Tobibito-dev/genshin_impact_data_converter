@@ -22,7 +22,9 @@ class DataObject:
         value = getattr(self, key)
         return value
 
-    def get_stats(self, level: int):
+    def get_stats(self, level: int, promoted=False):
+        stats = []
+        promote_stats = []
         if not hasattr(self, 'curve'):
             print('no curve existing')
             stats = None
@@ -30,10 +32,31 @@ class DataObject:
             print('this level doesnt exist')
             stats = None
         else:
-            stats = []
             for index, base_stat in enumerate(getattr(self, 'baseStats')):
                 stat = {}
                 curve_stat = getattr(self, 'curve')[level][index]
+                stat['type'] = base_stat['type']
                 stat['value'] = float_calculator.calculate(base_stat['value'], curve_stat['value'], curve_stat['arith'])
                 stats.append(stat)
+
+            for promote in getattr(self, 'promote'):
+                promote_max_level = promote['unlockMaxLevel']
+                if not promoted and level <= promote_max_level:
+                    promote_stats = promote['addProps']
+                    break
+                elif promoted and level < promote_max_level:
+                    promote_stats = promote['addProps']
+                    break
+                elif level == 90 and promote_max_level == 90:
+                    promote_stats = promote['addProps']
+                    break
+
+            for promote_stat in promote_stats:
+                if 'value' in promote_stat:
+                    promote_stat_type = promote_stat['propType']
+                    promote_stat_value = promote_stat['value']
+                    for stat in stats:
+                        if stat['type'] == promote_stat_type:
+                            stat['value'] = float_calculator.calculate(stat['value'], promote_stat_value, 'ARITH_ADD')
+
         return stats
