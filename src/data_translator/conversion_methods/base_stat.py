@@ -6,7 +6,7 @@ def convert(current_source_item, source_key, source_key_list):
 
     if source_key_list:
         for key in source_key_list:
-            base_stat_value = current_source_item.get(key, 1)
+            base_stat_value = current_source_item.get(key, 0)
             base_stat_values.append(base_stat_value)
 
     for index, stat in enumerate(current_source_item[source_key]):
@@ -24,7 +24,7 @@ def convert(current_source_item, source_key, source_key_list):
         if len(stat_types) <= index:
             stat_types.append(None)
         if len(base_stat_values) <= index:
-            base_stat_values.append(1)
+            base_stat_values.append(0)
         if len(curve_types) <= index:
             curve_types.append(None)
 
