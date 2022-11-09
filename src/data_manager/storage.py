@@ -31,9 +31,9 @@ class DataObject:
             stats = None
         else:
             stats = []
-            for base_stat in getattr(self, 'baseStats'):
-                stats.append(base_stat)
-            for index, stat in enumerate(stats):
+            for index, base_stat in enumerate(getattr(self, 'baseStats')):
+                stat = {}
                 curve_stat = getattr(self, 'curve')[level][index]
-                stat['value'] = float_calculator.calculate(stat['value'], curve_stat['value'], curve_stat['arith'])
+                stat['value'] = float_calculator.calculate(base_stat['value'], curve_stat['value'], curve_stat['arith'])
+                stats.append(stat)
         return stats
