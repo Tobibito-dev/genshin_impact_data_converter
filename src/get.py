@@ -1,5 +1,5 @@
 from . import data_manager
-from .data_manager.storage import DataObject
+from .data_manager.data_object import DataObject
 
 
 def get_all_data():

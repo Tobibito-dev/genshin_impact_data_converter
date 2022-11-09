@@ -1,5 +1,5 @@
 from . import storage
-from .storage import DataObject
+from .data_object import DataObject
 
 
 def all_data():
