@@ -14,11 +14,13 @@ character_materials_path = 'ExcelBinOutput/MaterialExcelConfigData.json'
 template = {
     'type': 'character',
     'paths': {'main': character_path,
-              'sub0': character_curve_path},
+              'sub0': character_curve_path,
+              'sub1': character_promote_path},
     'data': {'name': {'path': 'main', 'key': 'nameTextMapHash', 'conversionMethod': 'textMap'},
              'id': {'path': 'main', 'key': 'id', 'conversionMethod': 'direct'},
              'baseStats': {'path': 'main', 'key': 'propGrowCurves', 'conversionMethod': 'baseStat',
                            'key_list': ['hpBase', 'attackBase', 'defenseBase']},
              'curve': {'path': 'sub0', 'key': 'propGrowCurves', 'conversionMethod': 'curve'},
+             'promote': {'path': 'sub1', 'key': 'avatarPromoteId', 'conversionMethod': 'promote'},
              }
 }

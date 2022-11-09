@@ -55,8 +55,13 @@ class DataObject:
                 if 'value' in promote_stat:
                     promote_stat_type = promote_stat['propType']
                     promote_stat_value = promote_stat['value']
+                    stat_found = False
                     for stat in stats:
                         if stat['type'] == promote_stat_type:
                             stat['value'] = float_calculator.calculate(stat['value'], promote_stat_value, 'ARITH_ADD')
+                            stat_found = True
+                            break
+                    if not stat_found:
+                        stats.append(promote_stat)
 
         return stats
