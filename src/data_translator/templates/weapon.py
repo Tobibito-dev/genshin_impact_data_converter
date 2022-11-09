@@ -14,7 +14,7 @@ template = {
              'id': {'path': 'main', 'key': 'id', 'conversionMethod': 'direct'},
              'type': {'path': 'main', 'key': 'weaponType', 'conversionMethod': 'direct'},
              'rankLevel': {'path': 'main', 'key': 'rankLevel', 'conversionMethod': 'direct'},
-             'baseStats': {'path': 'main', 'key': 'weaponProp', 'conversionMethod': 'stat'},
+             'baseStats': {'path': 'main', 'key': 'weaponProp', 'conversionMethod': 'baseStat'},
              'curve': {'path': 'sub0', 'key': 'weaponProp', 'conversionMethod': 'curve'},
              # 'weaponPromote': {'path': 'sub1', 'key': 'weaponPromoteId', 'conversionMethod': 'weaponPromote'},
              # Todo: weaponPromote and Weapon Affix

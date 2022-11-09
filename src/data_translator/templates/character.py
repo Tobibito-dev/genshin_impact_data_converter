@@ -17,7 +17,7 @@ template = {
               'sub0': character_curve_path},
     'data': {'name': {'path': 'main', 'key': 'nameTextMapHash', 'conversionMethod': 'textMap'},
              'id': {'path': 'main', 'key': 'id', 'conversionMethod': 'direct'},
-             'baseStats': {'path': 'main', 'key': 'propGrowCurves', 'conversionMethod': 'stat',
+             'baseStats': {'path': 'main', 'key': 'propGrowCurves', 'conversionMethod': 'baseStat',
                            'key_list': ['hpBase', 'attackBase', 'defenseBase']},
              'curve': {'path': 'sub0', 'key': 'propGrowCurves', 'conversionMethod': 'curve'},
              }
