@@ -36,6 +36,7 @@ def convert_one_template_value(genshin_data_path, languages, source_data, src_it
     source_path = template_value['path']
     source_file = source_data[source_path]
     source_key = template_value['key']
+    source_key_list = template_value.get('key_list', None)
     conversion_method = template_value['conversionMethod']
 
     if conversion_method == 'curve':
@@ -45,7 +46,7 @@ def convert_one_template_value(genshin_data_path, languages, source_data, src_it
     elif conversion_method == 'readable':
         attribute = conversion_methods.readable.convert(genshin_data_path, languages, item_type, src_item, source_key)
     elif conversion_method == 'stat':
-        attribute = conversion_methods.stat.convert(src_item, source_file, source_key)
+        attribute = conversion_methods.stat.convert(src_item, source_key, source_key_list)
     elif conversion_method == 'textMap':
         attribute = conversion_methods.text_map.convert(languages, src_item, source_key)
     else:

@@ -1,9 +1,14 @@
 
-def convert(current_source_item, source_file, source_key):
+def convert(current_source_item, source_key, source_key_list):
     base_stats = []
     stat_types = []
     base_stat_values = []
     curve_types = []
+
+    if source_key_list:
+        for key in source_key_list:
+            base_stat_value = current_source_item.get(key, 1)
+            base_stat_values.append(base_stat_value)
 
     for index, stat in enumerate(current_source_item[source_key]):
         for value in stat:
