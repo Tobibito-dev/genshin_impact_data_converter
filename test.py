@@ -10,6 +10,7 @@ for key in artifact.data:
     pass
 
 print('')
+print('')
 # print(char.get_stats(90))
 # print(weapon.get_stats(90))
 
