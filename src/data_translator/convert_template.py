@@ -49,6 +49,8 @@ def convert_one_template_value(genshin_data_path, languages, source_data, src_it
         attribute = conversion_methods.promote.convert(src_item, source_file, source_key)
     elif conversion_method == 'readable':
         attribute = conversion_methods.readable.convert(genshin_data_path, languages, item_type, src_item, source_key)
+    elif conversion_method == 'talent':
+        attribute = conversion_methods.talent.convert(src_item, source_data, source_path, source_key)
     elif conversion_method == 'textMap':
         attribute = conversion_methods.text_map.convert(languages, src_item, source_key)
     else:
@@ -68,9 +70,8 @@ def get_source_data(genshin_data_path, template):
 
 
 def name_to_key(name: str):
-    key = name.lower()
-    key = key.replace(' ', '_').replace('-', '_')
-    chars = ["'",  '"', '.', '?', '!', '#']
+    key = name.replace("'", '').title()
+    chars = ['"', '.', '?', '!', '#', ' ', '-']
     for char in chars:
         key = key.replace(char, '')
     return key

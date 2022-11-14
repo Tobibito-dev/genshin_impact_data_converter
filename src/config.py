@@ -2,6 +2,7 @@
 # path has to end with /
 genshin_data_path = './GenshinData/'
 dump_data_path = './data/'
+enka_network_assets = 'https://enka.network/ui/'
 
 # languages
 language_keys = ['en', 'de', 'chs', 'cht', 'es', 'fr', 'id', 'jp', 'kr', 'pt', 'ru', 'th', 'vi']
