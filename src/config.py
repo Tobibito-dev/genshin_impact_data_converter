@@ -1,7 +1,7 @@
 # paths
 # path has to end with /
-genshin_data_path = './GenshinData/'
-dump_data_path = './data/'
+genshin_data_path = './input/GenshinData/'
+dump_data_path = './output/data/'
 enka_network_assets = 'https://enka.network/ui/'
 
 # languages

@@ -10,8 +10,10 @@ Python Api has been moved to
 https://github.com/Tobibito-dev/irminsul_py
 
 Quick Walktrough:
-- Put the GenshinData folder into the same folder as run.py
+- Put the GenshinData folder into input folder  
+- !!!Folder name must be GenshinData!!!
 - Run the program
+- Receive data in output folder
 - Do whatever you want with the converted data
 - I take no responsibility whatsoever
 
