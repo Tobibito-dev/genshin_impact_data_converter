@@ -1,4 +1,4 @@
-# Genshin Impact Data Manager
+# Genshin Impact Data Manager (W.I.P.)
 Data converter for GenshinData  
 
 Made in the hopes of making Genshin Data more accessible and  
@@ -14,3 +14,6 @@ Quick Walktrough:
 - Run the program
 - Do whatever you want with the converted data
 - I take no responsibility whatsoever
+
+
+## Warning: Does not convert all data yet!
