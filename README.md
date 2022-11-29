@@ -1,4 +1,4 @@
-# Genshin Impact Data Manager (W.I.P.)
+# Genshin Impact Data Converter (W.I.P.)
 Data converter for GenshinData  
 
 Made in the hopes of making Genshin Data more accessible and  
