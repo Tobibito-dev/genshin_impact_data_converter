@@ -3,10 +3,11 @@ artifact_path = 'ExcelBinOutput/ReliquaryExcelConfigData.json'
 artifact_set_path = 'ExcelBinOutput/ReliquarySetExcelConfigData.json'
 artifact_mainstat_path = 'ExcelBinOutput/ReliquaryLevelExcelConfigData.json'
 artifact_substat_path = 'ExcelBinOutput/ReliquaryAffixExcelConfigData.json'
+artifact_codex_path = 'ExcelBinOutput/ReliquaryCodexExcelConfigData.json'
 
 template = {
     'type': 'artifact',
-    'paths': {'main': artifact_path},
+    'paths': {'main': artifact_path, 'codex': artifact_codex_path},
     'data': {'name': {'path': 'main', 'key': 'nameTextMapHash', 'conversionMethod': 'textMap'},
              'id': {'path': 'main', 'key': 'id', 'conversionMethod': 'direct'},
              'setId': {'path': 'main', 'key': 'setId', 'conversionMethod': 'direct'},

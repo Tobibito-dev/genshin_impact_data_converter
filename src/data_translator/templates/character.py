@@ -6,10 +6,12 @@ character_constellations_path = 'ExcelBinOutput/AvatarTalentExcelConfigData.json
 character_passives_path = 'ExcelBinOutput/ProudSkillExcelConfigData.json'
 character_skill_depot_path = 'ExcelBinOutput/AvatarSkillDepotExcelConfigData.json'
 character_talents_path = 'ExcelBinOutput/AvatarSkillExcelConfigData.json'
+character_codex_path = 'ExcelBinOutput/AvatarCodexExcelConfigData.json'
 
 template = {
     'type': 'character',
     'paths': {'main': character_path,
+              'codex': character_codex_path,
               'sub0': character_curve_path,
               'sub1': character_promote_path,
               'depot': character_skill_depot_path,

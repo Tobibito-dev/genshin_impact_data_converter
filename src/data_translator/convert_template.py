@@ -3,7 +3,7 @@ import json
 from . import conversion_methods
 
 
-def convert_template_data(genshin_data_path, languages, template):
+def convert_template_data(genshin_data_path, languages, template, pre_release=False):
     source_data = get_source_data(genshin_data_path, template)
     item_type = template['type']
     template_data = template['data']
@@ -26,9 +26,11 @@ def convert_template_data(genshin_data_path, languages, template):
             key = 'unknown' + str(unknown)
             unknown = unknown + 1
 
-        converted_data[key] = converted_object
+        if item_released(source_data, converted_object['id']) or pre_release:
+            converted_data[key] = converted_object
 
-    converted_data['unknownCount'] = unknown
+    if pre_release:
+        converted_data['unknownCount'] = unknown
     return converted_data
 
 
@@ -69,9 +71,26 @@ def get_source_data(genshin_data_path, template):
     return source_data
 
 
+def item_released(source_data, item_id):
+    if 'codex' in source_data:
+        codex = source_data['codex']
+        released = False
+        for item in codex:
+            if 'isDisuse' not in item:
+                for value in item:
+                    if item[value] == item_id:
+                        released = True
+                        break
+            if released:
+                break
+    else:
+        released = True
+    return released
+
+
 def name_to_key(name: str):
     key = name.replace("'", '').title()
-    chars = ['"', '.', '?', '!', '#', ' ', '-']
+    chars = ['"', '.', '?', '!', '#', ' ', '-', ':']
     for char in chars:
         key = key.replace(char, '')
     return key
