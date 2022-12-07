@@ -3,7 +3,7 @@ import json
 from . import conversion_methods
 
 
-def convert_template_data(genshin_data_path, languages, template, pre_release=False):
+def convert_template_data(genshin_data_path, languages, template, pre_release: bool):
     source_data = get_source_data(genshin_data_path, template)
     item_type = template['type']
     template_data = template['data']

@@ -2,7 +2,7 @@ from . import config
 
 from .data_manager import storage
 
-from . import data_translator
+from .data_translator.translate import translate_data
 from . import data_updater
 
 
@@ -10,7 +10,7 @@ from . import data_updater
 # change pre_release on your own risk
 def init(pre_release=False):
     # pull_data()
-    convert_data(pre_release)
+    convert_data(pre_release=pre_release)
 
 
 def pull_data():
@@ -18,4 +18,4 @@ def pull_data():
 
 
 def convert_data(pre_release=False):
-    storage.replace_data(data_translator.translate.translate_data(config.genshin_data_path, config.language_keys))
+    storage.replace_data(translate_data(config.genshin_data_path, config.language_keys, pre_release=pre_release))
