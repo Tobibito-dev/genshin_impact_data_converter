@@ -12,12 +12,12 @@ template = {
     'type': 'character',
     'paths': {'main': character_path,
               'codex': character_codex_path,
-              'sub0': character_curve_path,
-              'sub1': character_promote_path,
+              'curve': character_curve_path,
+              'promote': character_promote_path,
               'depot': character_skill_depot_path,
-              'sub2': character_constellations_path,
-              'sub3': character_passives_path,
-              'sub4': character_talents_path,},
+              'constellations': character_constellations_path,
+              'passives': character_passives_path,
+              'talents': character_talents_path,},
     'data': {'name': {'path': 'main', 'key': 'nameTextMapHash', 'conversionMethod': 'textMap'},
              'id': {'path': 'main', 'key': 'id', 'conversionMethod': 'direct'},
              'useType': {'path': 'main', 'key': 'useType', 'conversionMethod': 'direct'},
@@ -28,9 +28,9 @@ template = {
              'weaponType': {'path': 'main', 'key': 'weaponType', 'conversionMethod': 'direct'},
              'baseStats': {'path': 'main', 'key': 'propGrowCurves', 'conversionMethod': 'baseStat',
                            'key_list': ['hpBase', 'attackBase', 'defenseBase']},
-             'curve': {'path': 'sub0', 'key': 'propGrowCurves', 'conversionMethod': 'curve'},
-             'promote': {'path': 'sub1', 'key': 'avatarPromoteId', 'conversionMethod': 'promote'},
-             'talents': {'path': 'depot', 'key': 'skillDepotId', 'conversionMethod': 'talent'}
+             'curve': {'path': 'curve', 'key': 'propGrowCurves', 'conversionMethod': 'curve'},
+             'promote': {'path': 'promote', 'key': 'avatarPromoteId', 'conversionMethod': 'promote'},
+             'talents': {'path': 'depot', 'key': 'skills', 'conversionMethod': 'talent'}
              # TODO: character talents
              }
 }

@@ -2,7 +2,7 @@ def convert(current_source_item, source_data, source_path, source_key):
     values = []
     keys = None
 
-    """depot_id = current_source_item['skillDepotId']
+    depot_id = current_source_item['skillDepotId']
     depot = source_data['depot']
     skill_source = source_data[source_path]
 
@@ -15,6 +15,6 @@ def convert(current_source_item, source_data, source_path, source_key):
         for skill_data in skill_source:
             pass
 
-        values.append(key)"""
+        values.append(key)
 
     return values
