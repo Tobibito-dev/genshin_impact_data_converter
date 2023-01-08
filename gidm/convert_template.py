@@ -17,6 +17,6 @@ def convert_to_template(template, paths):
         converted_data = {}
         for key in template:
             source = template[key]
-            converted_data[key] = get_value(source, files)
-        print(converted_data)
+            new_key = get_value(key, files)
+            converted_data[new_key] = get_value(source, files)
         dump_item(converted_data)

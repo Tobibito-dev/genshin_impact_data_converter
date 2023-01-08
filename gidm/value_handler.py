@@ -58,7 +58,7 @@ def get_dict_value_paths(source: dict, files):
 
 
 def get_value_path(source: str):
-    if source.startswith('#'):
-        return source.replace('#', '')
+    if source.startswith('$'):
+        return source.replace('$', '').split('/')
     else:
-        return source.split('/')
+        return source
