@@ -6,7 +6,7 @@ comprehensible for other genshin devs using python.
 
 This is only for converting GenshinData to readable Json  
 
-Python Api has been moved to  
+Python Rest Api at  
 https://github.com/Tobibito-dev/irminsul_py
 
 Quick Walktrough:
@@ -17,5 +17,9 @@ Quick Walktrough:
 - Do whatever you want with the converted data
 - I take no responsibility whatsoever
 
+Advanced Options
+- Settings: converter/config.py
+- Additional Data: templates
+- Template documentation
 
 ## Warning: Does not convert all data yet!
