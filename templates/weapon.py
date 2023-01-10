@@ -10,8 +10,11 @@ template = {
     "id": "$weaponId",
     "name": "$weaponId/weapon/.id/nameTextMapHash/text_map",
     "icon": "$weaponId/weapon/.id/icon",
-    "qualityType": "$weaponId/weapon/.id/qualityType",
+    "rankLevel": "$weaponId/weapon/.id/rankLevel",
     "weaponType": "$weaponId/weapon/.id/weaponType",
-    "baseStats":  "{weaponId/weapon/.id/weaponProp/*propType:weaponId/weapon/.id/weaponProp/*initValue}",
-    "baseStats2": "[weaponId/weapon/.id/weaponProp/*propType]"
+    "baseStat": {
+        "$weaponId/weapon/.id/weaponProp/#0/propType": "$weaponId/weapon/.id/weaponProp/#0/initValue",
+        "$weaponId/weapon/.id/weaponProp/#1/propType": "$weaponId/weapon/.id/weaponProp/#1/initValue",
+    },
+    "$weaponId/weapon/.id/weaponProp/*/propType": "*/initValue",
 }

@@ -1,4 +1,4 @@
-from .templates import character, weapon
+from templates import weapon, character
 
 from .convert_template import convert_to_template
 from .file_handler import reset_output

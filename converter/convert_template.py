@@ -1,7 +1,7 @@
 import json
 
 from .config import genshin_data_path
-from .value_handler import get_value
+from .value_handler import get_key_value_pair
 from .file_handler import dump_item
 
 
@@ -17,6 +17,7 @@ def convert_to_template(template, paths):
         converted_data = {}
         for key in template:
             source = template[key]
-            new_key = get_value(key, files)
-            converted_data[new_key] = get_value(source, files)
+            key_value_pair = get_key_value_pair(key, source, files)
+            print(key_value_pair)
+            converted_data[key_value_pair[0]] = key_value_pair[1]
         dump_item(converted_data)
