@@ -18,7 +18,7 @@ def convert_to_template(template, paths):
         with open(full_path, 'r', encoding='utf8') as json_file:
             files[path] = json.loads(json_file.read())
 
-    for entry in tqdm(files['codex'], position=0, leave=True):
+    for entry in tqdm(files['codex'], position=0, leave=True, desc=template['templateType'], ncols=100):
         files['entry'] = entry
         entry_converter = Thread(target=convert_entry_to_template, args=(template, files))
         entry_converter.start()
