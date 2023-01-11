@@ -18,23 +18,24 @@ template = {
     "qualityType": "$avatarId/character/.id/qualityType",
     "weaponType": "$avatarId/character/.id/weaponType",
     "baseStats": {
-        "FIGHT_PROP_BASE_HP": "$avatarId/character/.id/hpBase",
-        "FIGHT_PROP_BASE_ATTACK": "$avatarId/character/.id/attackBase",
-        "FIGHT_PROP_BASE_DEFENSE": "$avatarId/character/.id/defenseBase"
+        "$avatarId/character/.id/propGrowCurves/#0/type": "$avatarId/character/.id/hpBase",
+        "$avatarId/character/.id/propGrowCurves/#1/type": "$avatarId/character/.id/attackBase",
+        "$avatarId/character/.id/propGrowCurves/#2/type": "$avatarId/character/.id/defenseBase"
     },
-    #"curve": {"":[
-    #    {
-    #        "type": "#FIGHT_PROP_BASE_HP",
-    #        "value": "avatarId/character/.id/propGrowCurves/.type=FIGHT_PROP_BASE_HP/growCurve/curve/.level/curveInfos/.type/value",
-    #        "arith": ""
-    #    },
-    #    {
-    #        "type": "#FIGHT_PROP_BASE_ATTACK",
-    #    },
-    #    {
-    #        "type": "#FIGHT_PROP_BASE_DEFENSE",
-    #    }
-    #]},
+    "curve": {"$curve/*/level": {
+        "$avatarId/character/.id/propGrowCurves/#0/type": {
+            "value": "$avatarId/character/.id/propGrowCurves/#0/growCurve/curve/*/curveInfos/.type/value",
+            "arith": "$avatarId/character/.id/propGrowCurves/#0/growCurve/curve/*/curveInfos/.type/arith"
+        },
+        "$avatarId/character/.id/propGrowCurves/#1/type": {
+            "value": "$avatarId/character/.id/propGrowCurves/#1/growCurve/curve/*/curveInfos/.type/value",
+            "arith": "$avatarId/character/.id/propGrowCurves/#1/growCurve/curve/*/curveInfos/.type/arith"
+        },
+        "$avatarId/character/.id/propGrowCurves/#2/type": {
+            "value": "$avatarId/character/.id/propGrowCurves/#2/growCurve/curve/*/curveInfos/.type/value",
+            "arith": "$avatarId/character/.id/propGrowCurves/#2/growCurve/curve/*/curveInfos/.type/arith"
+        },
+    }}
     # "promote": {},
     # skill
     # burst

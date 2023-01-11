@@ -16,5 +16,14 @@ template = {
         "$weaponId/weapon/.id/weaponProp/#0/propType": "$weaponId/weapon/.id/weaponProp/#0/initValue",
         "$weaponId/weapon/.id/weaponProp/#1/propType": "$weaponId/weapon/.id/weaponProp/#1/initValue",
     },
-    "$weaponId/weapon/.id/weaponProp/*/propType": "*/initValue",
+    "curve": {"$curve/*/level": {
+        "$weaponId/weapon/.id/weaponProp/#0/propType": {
+            "value": "$weaponId/weapon/.id/weaponProp/#0/type/curve/*/curveInfos/.type/value",
+            "arith": "$weaponId/weapon/.id/weaponProp/#0/type/curve/*/curveInfos/.type/arith"
+        },
+        "$weaponId/weapon/.id/weaponProp/#1/propType": {
+            "value": "$weaponId/weapon/.id/weaponProp/#1/type/curve/*/curveInfos/.type/value",
+            "arith": "$weaponId/weapon/.id/weaponProp/#1/type/curve/*/curveInfos/.type/arith"
+        }
+    }}
 }
