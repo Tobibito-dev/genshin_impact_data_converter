@@ -67,10 +67,14 @@ def get_data_from_path(path, files, var_value=None):
             elif '.' in step and '=' not in step:
                 filter_key = step.replace('.', '')
                 data = filter_for_value(data, filter_key, last_value)
+            else:
+                data = 'Step Type Error: unexpected data type in template'
+                break
         elif type(step) == int:
             data = data[step]
         else:
             data = 'Step Type Error: unexpected data type in template'
+            break
 
     return data
 

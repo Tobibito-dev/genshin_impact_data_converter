@@ -7,8 +7,8 @@ from .config import dump_data_path
 def dump_item(item):
     type_dump_path = dump_data_path + item['templateType'] + '/'
     Path(type_dump_path).mkdir(parents=True, exist_ok=True)
-    item_key = item['name']['en'].title()
-    chars = ['"', '.', '?', '!', '#', ' ', '-', ':', "'"]
+    item_key = item['name']['en'].replace("'", '').title()
+    chars = ['"', '.', '?', '!', '#', ' ', '-', ':']
     for char in chars:
         item_key = item_key.replace(char, '')
     item_dump_path = type_dump_path + item_key + '.json'
