@@ -20,6 +20,6 @@ Quick Walktrough:
 Advanced Options
 - Settings: converter/config.py
 - Additional Data: templates
-- Template documentation
+- Template Documentation: Coming Soon
 
 ## Warning: Does not convert all data yet!
