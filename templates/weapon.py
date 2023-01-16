@@ -8,6 +8,7 @@ paths = {
 template = {
     "templateType": "weapon",
     "id": "$weaponId",
+    "sortId": "$SortOrder",
     "name": "$weaponId/weapon/.id/nameTextMapHash/text_map",
     "icon": "$weaponId/weapon/.id/icon",
     "rankLevel": "$weaponId/weapon/.id/rankLevel",

@@ -1,6 +1,4 @@
 import json
-import sys
-import threading
 
 from threading import Thread
 

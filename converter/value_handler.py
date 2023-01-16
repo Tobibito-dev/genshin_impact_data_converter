@@ -71,7 +71,11 @@ def get_data_from_path(path, files, var_value=None):
                 data = 'Step Type Error: unexpected data type in template'
                 break
         elif type(step) == int:
-            data = data[step]
+            if type(data) == list:
+                data = data[step]
+            elif step >= 1:
+                data = "Doesn't exist on this Item"
+                break
         else:
             data = 'Step Type Error: unexpected data type in template'
             break

@@ -12,6 +12,7 @@ paths = {
 template = {
     "templateType": "character",
     "id": "$avatarId",
+    "sortId": "$sortId",
     "name": "$avatarId/character/.id/nameTextMapHash/text_map",
     "icon": "$avatarId/character/.id/iconName",
     "sideIcon": "$avatarId/character/.id/sideIconName",
