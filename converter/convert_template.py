@@ -18,8 +18,9 @@ def convert_to_template(template, paths):
 
     for entry in tqdm(files['codex'], position=0, leave=True, desc=template['templateType'], ncols=100):
         files['entry'] = entry
-        entry_converter = Thread(target=convert_entry_to_template, args=(template, files))
-        entry_converter.start()
+        # entry_converter = Thread(target=convert_entry_to_template, args=(template, files))
+        # entry_converter.start()
+        convert_entry_to_template(template, files)
 
     return
 
