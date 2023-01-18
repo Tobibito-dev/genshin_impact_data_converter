@@ -3,7 +3,8 @@ paths = {
     'set': 'ExcelBinOutput/ReliquarySetExcelConfigData.json',
     'artifact': 'ExcelBinOutput/ReliquaryExcelConfigData.json',
     'equipAffix': 'ExcelBinOutput/EquipAffixExcelConfigData.json',
-    'display_item': 'ExcelBinOutput/DisplayItemExcelConfigData.json'
+    'display_item': 'ExcelBinOutput/DisplayItemExcelConfigData.json',
+    'ability': 'BinOutput/Ability/Temp/EquipAbilities/ConfigAbility_Relic.json',
 }
 
 template = {
@@ -20,10 +21,15 @@ template = {
 
     "setEffects": {
         "$suitId/set/.setId/setNeedNum/*": {
-            "openConfig": "$suitId/set/.setId/EquipAffixId/equipAffix/.id/*/openConfig",
-            "description": "$suitId/set/.setId/EquipAffixId/equipAffix/.id/*/descTextMapHash/text_map",
-            "props": "$suitId/set/.setId/EquipAffixId/equipAffix/.id/*/addProps",
-            "parameters": "$suitId/set/.setId/EquipAffixId/equipAffix/.id/*/paramList",
+            "readable": {
+                "openConfig": "$suitId/set/.setId/EquipAffixId/equipAffix/.id/*/openConfig",
+                "description": "$suitId/set/.setId/EquipAffixId/equipAffix/.id/*/descTextMapHash/text_map",
+            },
+            "data": {
+                "props": "$suitId/set/.setId/EquipAffixId/equipAffix/.id/*/addProps",
+                "parameters": "$suitId/set/.setId/EquipAffixId/equipAffix/.id/*/paramList",
+                "ability": "$suitId/set/.setId/EquipAffixId/equipAffix/.id/*/openConfig/ability/.Default.abilityName/Default",
+            }
         }
     },
 

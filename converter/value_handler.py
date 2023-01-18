@@ -61,11 +61,11 @@ def get_data_from_path(path, files, var_value=None):
                 if not type(data) == list and not type(data) == dict:
                     last_value = data
             elif '.' in step and '=' in step:
-                filter_key = step.replace('.', '').split('=')[0]
+                filter_key = step.split('=')[0].split('.')
                 filter_value = step.replace('.', '').split('=')[1]
                 data = filter_for_value(data, filter_key, filter_value)
             elif '.' in step and '=' not in step:
-                filter_key = step.replace('.', '')
+                filter_key = step.split('.')
                 data = filter_for_value(data, filter_key, last_value)
             else:
                 data = 'Step Type Error: unexpected data type in template'
@@ -83,14 +83,18 @@ def get_data_from_path(path, files, var_value=None):
     return data
 
 
-def filter_for_value(source_data, filter_key: str, filter_value):
+def filter_for_value(source_data, filter_key: list, filter_value):
     value = []
+
     for sub_source in source_data:
         if type(sub_source) == str:
             sub_source = source_data[sub_source]
-        if filter_key in sub_source:
-            if sub_source[filter_key] == filter_value:
-                value.append(sub_source)
+        temp_source = sub_source
+        for step in filter_key:
+            if step in temp_source and not step == '':
+                temp_source = temp_source[step]
+        if temp_source == filter_value:
+            value.append(sub_source)
 
     if len(value) == 1:
         value = value[0]
