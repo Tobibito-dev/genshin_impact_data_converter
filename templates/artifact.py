@@ -3,7 +3,7 @@ paths = {
     'set': 'ExcelBinOutput/ReliquarySetExcelConfigData.json',
     'artifact': 'ExcelBinOutput/ReliquaryExcelConfigData.json',
     'equipAffix': 'ExcelBinOutput/EquipAffixExcelConfigData.json',
-    'display_item': 'ExcelBinOutput/DisplayItemExcelConfigData.json',
+    'displayItem': 'ExcelBinOutput/DisplayItemExcelConfigData.json',
     'ability': 'BinOutput/Ability/Temp/EquipAbilities/ConfigAbility_Relic.json',
 }
 
@@ -11,8 +11,8 @@ template = {
     "templateType": "artifact",
     "id": "$suitId",
     "sortId": "$SortOrder",
-    "name": "$suitId/display_item/.param/#0/nameTextMapHash/text_map",
-    "icon": "$suitId/display_item/.param/#0/icon",
+    "name": "$suitId/displayItem/.param/#0/nameTextMapHash/text_map",
+    "icon": "$suitId/displayItem/.param/#0/icon",
 
     "setRequirement": "$suitId/set/.setId/setNeedNum",
     "setAbilities": "$suitId/set/.setId/AKAIKNIJEKJ",

@@ -49,6 +49,8 @@ def get_data_from_path(path, files, var_value=None):
     last_value = 'No data in this location'
     data = files['entry']
     for step in path:
+        if data == None:
+            break
         if step == '*' and not var_value is None:
             step = var_value
         if type(step) == str:
@@ -78,6 +80,9 @@ def get_data_from_path(path, files, var_value=None):
                 break
         else:
             data = 'Step Type Error: unexpected data type in template'
+            break
+        if data == '':
+            data = None
             break
 
     return data
